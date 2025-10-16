@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeatroWeb - Preguntas Frecuentes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" xintegrity="sha512-1ycn6IcaQQ40JuKakVxfkbuKtRgsMiHzqLzWjYyLgNCwQjWdoUCOsW6yAZNG5sZzQzX+uQ3w0D/Xk/a3x2b2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav id="main-nav"></nav>
+    </header>
+
+    <main class="container content-page">
+        <h1>Preguntas Frecuentes</h1>
+
+        <div class="faq-item">
+            <h3>¿Cómo puedo comprar entradas?</h3>
+            <p>Puedes comprar entradas navegando por nuestra sección de "Eventos", seleccionando el evento de tu interés y siguiendo los pasos de compra en la página de detalles del evento.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Cuáles son los métodos de pago aceptados?</h3>
+            <p>Actualmente aceptamos pagos con tarjetas de crédito y débito (Visa, MasterCard, American Express) a través de nuestra plataforma segura.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Puedo cancelar o cambiar mis entradas?</h3>
+            <p>Las políticas de cancelación y cambio varían según el evento. Por favor, revisa los "Términos y Condiciones" específicos del evento o contáctanos directamente para asistencia.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Cómo recibo mis entradas?</h3>
+            <p>Una vez completada la compra, recibirás un correo electrónico de confirmación con tus entradas digitales adjuntas. También podrás acceder a ellas desde la sección "Mi Cuenta".</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Qué hago si no recibo mi correo de confirmación?</h3>
+            <p>Primero, verifica tu carpeta de spam o correo no deseado. Si aún no lo encuentras, por favor, inicia sesión en "Mi Cuenta" para descargar tus entradas o contáctanos para que podamos ayudarte.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Es seguro comprar en TeatroWeb?</h3>
+            <p>Sí, utilizamos tecnología de encriptación avanzada para proteger tu información personal y de pago. Tus datos están seguros con nosotros.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nosotros</h3>
+                <p>TeatroWeb es tu plataforma definitiva para encontrar y comprar entradas para los mejores espectáculos teatrales de la ciudad.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#all-events-section">Eventos</a></li> <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                    <li><a href="terms.html">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Ficticia 123, Ciudad, País</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@teatroweb.com</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TeatroWeb. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { firebaseConfig } from './js/firebase-config.js';
+        const app = firebase.initializeApp(firebaseConfig);
+        window.db = app.firestore();
+        window.auth = app.auth();
+        console.log("Firebase, Firestore y Auth inicializados en faq.html. 'window.db' y 'window.auth' están disponibles.");
+    </script>
+
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/nav.js"></script>
+
+    <div id="toast-container"></div>
+</body>
+</html>

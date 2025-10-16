@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeatroWeb - Mi Cuenta</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav id="main-nav"></nav>
+    </header>
+
+    <main class="container my-account-container">
+        <h1>Mi Cuenta</h1>
+
+        <div id="account-auth-status" class="info-message">Cargando estado de autenticación...</div>
+
+        <div id="account-details-section" class="account-card" style="display: none;">
+            <h2>Detalles de la Cuenta</h2>
+            <p><strong>Email:</strong> <span id="user-email">Cargando...</span></p>
+            <p><strong>Nombre:</strong> <span id="user-name">Cargando...</span></p>
+            <p><strong>Miembro desde:</strong> <span id="user-registered-date">Cargando...</span></p>
+            <button id="edit-profile-btn" class="btn-small">Editar Perfil</button>
+        </div>
+
+        <!-- Sección de Edición de Perfil (oculta por defecto) -->
+        <div id="edit-profile-section" class="account-card" style="display: none;">
+            <h2>Editar Perfil</h2>
+            <form id="edit-profile-form">
+                <div class="form-group">
+                    <label for="edit-name">Nombre:</label>
+                    <input type="text" id="edit-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-email">Correo Electrónico:</label>
+                    <input type="email" id="edit-email" disabled> <!-- Email no editable -->
+                </div>
+                <button type="submit" class="btn-auth">Guardar Cambios</button>
+                <button type="button" class="btn-cancel" id="cancel-edit-profile-btn">Cancelar</button>
+                <div id="edit-profile-message" class="info-message"></div>
+            </form>
+        </div>
+
+
+        <div id="my-purchases-section" class="account-card" style="display: none;">
+            <h2>Mis Entradas Compradas</h2>
+            <div id="no-purchases-message" class="info-message" style="display: none;">Aún no has realizado ninguna compra.</div>
+            <div class="table-responsive">
+                <table id="purchases-table">
+                    <thead>
+                        <tr>
+                            <!-- Añadir data-sort y íconos para cada columna ordenable -->
+                            <th data-sort="eventTitle">Evento 
+                                <span class="sort-icon" data-column="eventTitle">
+                                    <i class="fas fa-sort"></i>
+                                </span>
+                            </th>
+                            <th data-sort="eventDate">Fecha Evento 
+                                <span class="sort-icon" data-column="eventDate">
+                                    <i class="fas fa-sort"></i>
+                                </span>
+                            </th>
+                            <th data-sort="quantity">Cantidad 
+                                <span class="sort-icon" data-column="quantity">
+                                    <i class="fas fa-sort"></i>
+                                </span>
+                            </th>
+                            <th data-sort="totalAmount">Total Pagado 
+                                <span class="sort-icon" data-column="totalAmount">
+                                    <i class="fas fa-sort"></i>
+                                </span>
+                            </th>
+                            <th data-sort="purchaseDate">Fecha Compra 
+                                <span class="sort-icon" data-column="purchaseDate">
+                                    <i class="fas fa-sort"></i>
+                                </span>
+                            </th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las compras se cargarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nosotros</h3>
+                <p>TeatroWeb es tu plataforma definitiva para encontrar y comprar entradas para los mejores espectáculos teatrales de la ciudad.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#all-events-section">Eventos</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                    <li><a href="terms.html">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Ficticia 123, Ciudad, País</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@teatroweb.com</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TeatroWeb. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Firebase SDKs (Compatibles para acceso global) -->
+    <!-- Se inicializan en firebase-init.js y se hacen globales -->
+    <script type="module" src="js/firebase-init.js"></script>
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/nav.js"></script>
+    <script type="module" src="js/my-account.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeatroWeb - Seleccionar Asientos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav id="main-nav"></nav>
+    </header>
+
+    <main class="container payment-container">
+        <h1>Resumen de Compra</h1>
+
+        <div class="summary-card">
+            <h2>Detalles del Evento</h2>
+            <p><strong>Evento:</strong> <span id="event-title">Cargando...</span></p>
+            <p><strong>Fecha:</strong> <span id="event-date">Cargando...</span></p>
+            <p><strong>Lugar:</strong> <span id="event-location">Cargando...</span></p>
+            <p><strong>Precio por Entrada:</strong> <span id="event-price">Cargando...</span></p>
+        </div>
+
+        <div class="summary-card seats-selection-area"> <!-- Usamos la clase del CSS para la sección de asientos -->
+            <h2>Selecciona tus Asientos</h2>
+            <p class="info-message" id="seat-selection-message">Por favor, inicia sesión para seleccionar asientos.</p>
+            
+            <div id="seat-map" class="seat-map">
+                <div class="seats-grid">
+                    <!-- Los asientos se cargarán aquí dinámicamente por pago.js -->
+                </div>
+            </div>
+            
+            <div class="legend">
+                <div class="seat available"></div> Disponible
+                <div class="seat selected"></div> Seleccionado
+                <div class="seat occupied"></div> Ocupado
+            </div>
+
+            <div class="total-price-summary">
+                <p>Asientos seleccionados: <span id="selected-seats-count">0</span></p>
+                <p>Total a Pagar: <span id="total-amount">CLP$0</span></p>
+            </div>
+            
+            <div class="button-group">
+                <button id="continue-to-payment-btn" class="btn-auth" disabled>Continuar a Pago</button>
+                <a href="index.html" class="btn-cancel">Cancelar y Volver al Inicio</a>
+            </div>
+            <div id="payment-error-message" class="error-message"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nosotros</h3>
+                <p>TeatroWeb es tu plataforma definitiva para encontrar y comprar entradas para los mejores espectáculos teatrales de la ciudad.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#all-events-section">Eventos</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                    <li><a href="terms.html">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Ficticia 123, Ciudad, País</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@teatroweb.com</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TeatroWeb. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts modulares al final del body -->
+    <script type="module" src="js/firebase-init.js"></script>
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/nav.js"></script>
+    <script type="module" src="js/pago.js"></script>
+
+    <div id="toast-container"></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeatroWeb - Detalle del Evento</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav id="main-nav"></nav>
+    </header>
+
+    <main class="container">
+        <!-- El contenido del evento se inyectará aquí por evento.js -->
+        <section id="event-detail" class="event-detail-card">
+            <!-- Contenido dinámico del evento -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TeatroWeb. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts modulares al final del body -->
+    <script type="module" src="js/firebase-init.js"></script>
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/nav.js"></script>
+    <script type="module" src="js/evento.js"></script>
+
+    <div id="toast-container"></div>
+</body>
+</html>
