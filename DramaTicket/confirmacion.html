@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DramaTicket - Confirmación de Compra</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" xintegrity="sha512-1ycn6IcaQQ40JuKakVxfkbuKtRgsMiHzqLzWjYyLgNCwQjWdoUCOsW6yAZNG5sZzQzX+uQ3w0D/Xk/a3x2b2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav id="main-nav"></nav>
+    </header>
+
+    <main class="container confirmation-message">
+        <h1>¡Compra Confirmada! <i class="fas fa-check-circle success-icon"></i></h1>
+        <p>Tu compra ha sido procesada exitosamente.</p>
+        <p>Recibirás un correo electrónico con los detalles de tus entradas en breve.</p>
+
+        <div id="confirmation-details">
+            <h2>Detalles de tu Compra</h2>
+            <p><strong>Evento:</strong> <span id="conf-event-title"></span></p>
+            <p><strong>Fecha y Hora:</strong> <span id="conf-event-date"></span></p>
+            <p><strong>Lugar:</strong> <span id="conf-event-location"></span></p>
+            <p><strong>Asientos:</strong> <span id="conf-selected-seats"></span></p>
+            <p><strong>Cantidad de Entradas:</strong> <span id="conf-quantity"></span></p>
+            <p class="total-paid"><strong>Total Pagado:</strong> <span id="conf-total-amount"></span></p>
+            <p class="purchase-id"><strong>ID de Compra:</strong> <span id="conf-purchase-id"></span></p>
+        </div>
+
+        <div class="qr-code-section">
+            <h3>Tu Código QR para Acceso</h3>
+            <p>Presenta este código en la entrada del evento.</p>
+            <canvas id="qr-code-canvas"></canvas>
+            <small>Guarda esta página o toma una captura de pantalla.</small>
+        </div>
+
+        <a href="index.html" class="btn-back-home">Volver al Inicio</a>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nosotros</h3>
+                <p>DramaTicket es tu plataforma definitiva para encontrar y comprar entradas para los mejores espectáculos teatrales de la ciudad.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#event-list-section">Eventos</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Ficticia 123, Ciudad, País</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@dramaticket.com</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DramaTicket. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts modulares al final del body -->
+    <script type="module" src="js/firebase-init.js"></script>
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/nav.js"></script>
+    <script type="module" src="js/confirmacion.js"></script>
+
+    <div id="toast-container"></div>
+</body>
+</html>
