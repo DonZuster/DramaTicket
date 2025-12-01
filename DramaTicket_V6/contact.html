@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DramaTicket - Contacto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav id="main-nav"></nav>
+    </header>
+
+    <main class="container contact-container">
+        <h1>Contáctanos</h1>
+        <p class="section-description">¿Tienes preguntas, sugerencias o necesitas ayuda? Estamos aquí para escucharte.</p>
+
+        <div class="contact-grid">
+            <!-- Tarjeta de Ubicación -->
+            <div class="contact-info-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Nuestra Ubicación</h3>
+                <p>Calle Ficticia 123, Ciudad de Teatro</p>
+                <p>Santiago, Región Metropolitana, Chile</p>
+                <a href="https://maps.google.com/?q=Teatro+Ficticio" target="_blank" class="btn-small btn-view-map">Ver en Mapa</a>
+            </div>
+
+            <!-- Tarjeta de Teléfono -->
+            <div class="contact-info-card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Llámanos</h3>
+                <p>Teléfono: +56 9 1234 5678</p>
+                <p>Atención al cliente: L-V, 9:00 - 18:00 hrs</p>
+                <a href="tel:+56912345678" class="btn-small btn-call">Llamar Ahora</a>
+            </div>
+
+            <!-- Tarjeta de Email -->
+            <div class="contact-info-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Envíanos un Email</h3>
+                <p>info@dramaticket.com</p>
+                <p>soporte@dramaticket.com</p>
+                <a href="mailto:info@dramaticket.com" class="btn-small btn-email">Enviar Email</a>
+            </div>
+        </div>
+
+        <div class="contact-form-card">
+            <h2>Envíanos un Mensaje</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Tu Nombre:</label>
+                    <input type="text" id="contact-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Tu Correo Electrónico:</label>
+                    <input type="email" id="contact-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-subject">Asunto:</label>
+                    <input type="text" id="contact-subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Tu Mensaje:</label>
+                    <textarea id="contact-message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="btn-auth">Enviar Mensaje <i class="fas fa-paper-plane"></i></button>
+                <div id="contact-form-message" class="info-message"></div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nosotros</h3>
+                <p>DramaTicket es tu plataforma definitiva para encontrar y comprar entradas para los mejores espectáculos teatrales de la ciudad.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#all-events-section">Eventos</a></li>
+                    <li><a href="my-account.html">Mi Cuenta</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                    <li><a href="terms.html">Términos y Condiciones</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Ficticia 123, Ciudad, País</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@dramaticket.com</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DramaTicket. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts modulares al final del body -->
+    <script type="module" src="js/firebase-init.js"></script>
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/nav.js"></script>
+    <script type="module" src="js/contact.js"></script>
+</body>
+</html>
